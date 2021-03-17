@@ -15,7 +15,8 @@ class PersonaController extends Controller
      */
     public function index()
     {
-         $persona = Persona::all();
+         //return  Persona::all();
+         return DB::select("select p.*,t.* from persona p left join telefono t on p.idpersona=t.idpersona");
         //SELECT p.*,GROUP_CONCAT( t.numero) as telefonos FROM `persona` p
         // inner join telefono t on t.idpersona = p.idpersona
         // GROUP BY (p.idpersona)
@@ -25,7 +26,7 @@ class PersonaController extends Controller
         //                        group by p.idpersona,p.nombre,p.apellidopaterno,p.apellidomaterno,p.ci,p.direccion
         //                        ");
 
-        return view('persona.index')->with('persona',$persona);
+        //return view('persona.index')->with('persona',$persona);
     }
 
     /**
@@ -35,7 +36,7 @@ class PersonaController extends Controller
      */
     public function create()
     {
-        return view('persona.create');
+        //return view('persona.create');
     }
 
     /**
@@ -54,7 +55,7 @@ class PersonaController extends Controller
         $persona->direccion=$request->get('direccion');
         $persona->save();
 
-        return redirect('/persona');
+       
     
     }
 
@@ -88,9 +89,9 @@ class PersonaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        $persona =  Persona::find($id);
+        $persona =  Persona::findOrFail($request->idpersona);
         $persona->nombre=$request->get('nombre');
         $persona->apellidopaterno=$request->get('apellidopaterno');
         $persona->apellidomaterno=$request->get('apellidomaterno');
@@ -98,7 +99,6 @@ class PersonaController extends Controller
         $persona->direccion=$request->get('direccion');
         $persona->save();
 
-        return redirect('/persona');
     }
 
     /**
@@ -107,10 +107,10 @@ class PersonaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        $persona =  Persona::find($id);
+        $persona =  Persona::findOrFail($request->idpersona);
         $persona->delete();
-        return redirect('/persona');
+
     }
 }

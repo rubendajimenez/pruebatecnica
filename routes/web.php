@@ -14,7 +14,22 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('contenido/contenido');
 });
 
-Route::resource('persona','App\Http\Controllers\PersonaController');
+
+
+
+//tipo telefono
+Route::get('/tipotelefono','App\Http\Controllers\TipoTelefonoController@index');
+Route::post('/tipotelefono/registrar','App\Http\Controllers\TipoTelefonoController@store');
+Route::put('/tipotelefono/actualizar','App\Http\Controllers\TipoTelefonoController@update');
+Route::put('/tipotelefono/eliminar','App\Http\Controllers\TipoTelefonoController@eliminar');
+
+//persona
+Route::get('/persona','App\Http\Controllers\PersonaController@index');
+Route::post('/persona/registrar','App\Http\Controllers\PersonaController@store');
+Route::put('/persona/actualizar','App\Http\Controllers\PersonaController@update');
+Route::put('/persona/eliminar','App\Http\Controllers\PersonaController@destroy');
+
+//Route::resource('persona','App\Http\Controllers\PersonaController');
