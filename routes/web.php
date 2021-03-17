@@ -30,6 +30,6 @@ Route::put('/tipotelefono/eliminar','App\Http\Controllers\TipoTelefonoController
 Route::get('/persona','App\Http\Controllers\PersonaController@index');
 Route::post('/persona/registrar','App\Http\Controllers\PersonaController@store');
 Route::put('/persona/actualizar','App\Http\Controllers\PersonaController@update');
-Route::put('/persona/eliminar','App\Http\Controllers\PersonaController@destroy');
+Route::put('/persona/eliminar','App\Http\Controllers\PersonaController@eliminar');
 
 //Route::resource('persona','App\Http\Controllers\PersonaController');

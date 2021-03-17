@@ -11,6 +11,7 @@ class Persona extends Model
     protected $primaryKey = 'idpersona';//comentario
 
     protected $fillable = [
+        'idpersona',
         'nombre',
         'apellidopaterno',
         'apellidomaterno',

@@ -9,7 +9,7 @@
     <meta name="author" content="Incanatoit.com">
     <meta name="keyword" content="Sistema ventas Laravel Vue Js, Sistema compras Laravel Vue Js">
     <link rel="shortcut icon" href="img/favicon.png">
-    <title>Sistema Ventas - IncanatoIT</title>
+    <title>Pruebatecnica</title>
 
 
     <link href="css/plantilla.css" rel="stylesheet">
@@ -88,8 +88,8 @@
 </div>
 
     <footer class="app-footer">
-        <span><a href="http://www.incanatoit.com/">IncanatoIT</a> &copy; 2017</span>
-        <span class="ml-auto">Desarrollado por <a href="http://www.incanatoit.com/">IncanatoIT</a></span>
+     <!--   <span><a href="http://www.incanatoit.com/">IncanatoIT</a> &copy; 2017</span>
+        <span class="ml-auto">Desarrollado por <a href="http://www.incanatoit.com/">IncanatoIT</a></span> -->
     </footer>
 
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>

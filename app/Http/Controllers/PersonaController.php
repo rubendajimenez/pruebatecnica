@@ -15,8 +15,8 @@ class PersonaController extends Controller
      */
     public function index()
     {
-         //return  Persona::all();
-         return DB::select("select p.*,t.* from persona p left join telefono t on p.idpersona=t.idpersona");
+         return  Persona::all();
+         //return DB::select("select p.idpersona,p.nombre,p.apellidopaterno,p.apellidomaterno,p.ci,p.direccion,t.* from persona p left join telefono t on p.idpersona=t.idpersona");
         //SELECT p.*,GROUP_CONCAT( t.numero) as telefonos FROM `persona` p
         // inner join telefono t on t.idpersona = p.idpersona
         // GROUP BY (p.idpersona)
@@ -107,10 +107,11 @@ class PersonaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request)
+    public function eliminar(Request $request)
     {
         $persona =  Persona::findOrFail($request->idpersona);
         $persona->delete();
 
     }
+
 }

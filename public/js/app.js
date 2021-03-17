@@ -1995,6 +1995,7 @@ __webpack_require__.r(__webpack_exports__);
     listarPersona: function listarPersona() {
       var me = this;
       axios.get('/persona').then(function (response) {
+        console.log(response);
         me.arrayPersona = response.data;
       })["catch"](function (error) {
         console.log(error);
