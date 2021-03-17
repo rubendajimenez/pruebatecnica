@@ -56,18 +56,13 @@
                         <div class="modal-body">
                             <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
                                 <div class="form-group row">
-                                    <label class="col-md-3 form-control-label" for="text-input">Nombre</label>
+                                    <label class="col-md-3 form-control-label" for="text-input">Descripcion</label>
                                     <div class="col-md-9">
-                                        <input type="text" v-model="descripcion" class="form-control" placeholder="Nombre de categoría">
-                                        <span class="help-block">Ingrese descripcion</span>
+                                        <input type="text" v-model="descripcion" class="form-control" placeholder="Tipo telefono">
+                                       
                                     </div>
                                 </div>
-                                <div class="form-group row">
-                                    <label class="col-md-3 form-control-label" for="email-input">Descripción</label>
-                                    <div class="col-md-9">
-                                        <input type="email" id="descripcion" name="descripcion" class="form-control" placeholder="Enter Email">
-                                    </div>
-                                </div>
+                          
 
                                 <div v-show="errortipotelefono" class="form-group row div-error">
                                       <div class="text-center text-error">
@@ -209,14 +204,14 @@
                                       console.log("esta accion"+accion);
                                       this.modal = 1;
                                       this.tipoaccion = 2;
-                                      this.tituloModal = "Actualizar Telefono";
+                                      this.tituloModal = "Actualizar tipo Telefono";
                                       this.idtipotelefono = data['idtipotelefono'];
                                       this.descripcion = data['descripcion'];
                                   }
                               if('guardar'==accion)
                                   {
                                       console.log("esta "+accion);
-                                      this.tituloModal = "Registrar Telefono"
+                                      this.tituloModal = "Registrar tipo Telefono"
                                      this.modal = 1;
                                      this.descripcion = '';
                                      this.tipoaccion = 1
